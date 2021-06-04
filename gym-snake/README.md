@@ -1,0 +1,1 @@
+Snake environment for Junior Clinic project in OpenAI gym

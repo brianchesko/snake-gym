@@ -1,0 +1,58 @@
+{
+  "gameplay": {
+    "board": {
+      "width": 10,
+      "height": 10
+    },
+    "ticks_per_second": 1000000,
+    "block_until_action": true,
+    "growth_rate": 2,
+    "initial_direction": "RANDOM",
+    "initial_size": 1,
+    "scoring": {
+      "winning_extra": 100,
+      "food_eaten": 50
+    }
+  },
+  "graphics": {
+    "frames_per_second": 60,
+    "cell_size": 35,
+    "palette": {
+      "main_background": "skyblue",
+      "borders": {
+        "color_major": "black",
+        "color_minor": "white",
+        "thickness_px": 3
+      },
+      "snake": {
+        "color": "blue"
+      },
+      "food": {
+        "color": "maroon"
+      },
+      "text": {
+        "start_game": {
+          "main_color": "white",
+          "outline_color": "black"
+        },
+        "game_over": {
+          "main_color": "white",
+          "outline_color": "black"
+        },
+        "victory": {
+          "main_color": "white",
+          "outline_color": "black"
+        },
+        "info": {
+          "show": false,
+          "main_color": "white",
+          "outline_color": "black"
+        }
+      }
+    }
+  },
+  "debug": {
+    "fps_time_window_ms": 1000,
+    "console_debug_info": false
+  }
+}

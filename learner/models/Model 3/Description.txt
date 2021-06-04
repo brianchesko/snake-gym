@@ -1,0 +1,20 @@
+Model is encoded with food=-100, bg=0, head=1, body=2
+
+    policy = LinearAnnealedPolicy(EpsGreedyQPolicy(), attr='eps', value_max=1.0, value_min=.4, value_test=.05,
+                                  nb_steps=2000000)
+
+    dqn = DQNAgent(model=model, nb_actions=nb_actions, policy=policy, memory=memory,
+                   nb_steps_warmup=50000, gamma=.98, target_model_update=10000,
+                   train_interval=1, delta_clip=1., batch_size=32)
+    dqn.compile(Adam(lr=.0002), metrics=['mae'])
+
+    model = Sequential([
+        Permute(permute_dims, input_shape=input_shape),
+        Conv2D(32, (2, 2), activation='relu'),
+        Conv2D(32, (2, 2), activation='relu'),
+        Flatten(),
+        Dense(32, activation='relu'),
+        Dense(16, activation='relu'),
+        Dropout(0.3),
+        Dense(nb_actions, activation='linear')
+    ])
